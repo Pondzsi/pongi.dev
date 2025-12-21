@@ -1,0 +1,66 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background with subtle gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="copperGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4965f;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#B87333;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9e6329;stop-opacity:1" />
+    </linearGradient>
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Rounded rectangle background -->
+  <rect width="512" height="512" fill="url(#bgGradient)" rx="90"/>
+  
+  <!-- Border accent -->
+  <rect width="512" height="512" fill="none" stroke="url(#copperGradient)" stroke-width="4" rx="90" opacity="0.3"/>
+  
+  <!-- Letter P with shadow -->
+  <g filter="url(#shadow)">
+    <path d="M 150 120 
+             H 290 
+             Q 360 120 390 150 
+             Q 420 180 420 250 
+             Q 420 320 390 350 
+             Q 360 380 290 380 
+             H 220 
+             V 480 
+             H 150 
+             Z 
+             M 220 180 
+             V 320 
+             H 290 
+             Q 325 320 342.5 302.5 
+             Q 360 285 360 250 
+             Q 360 215 342.5 197.5 
+             Q 325 180 290 180 
+             Z" 
+          fill="url(#copperGradient)"/>
+  </g>
+  
+  <!-- Subtle highlight on the P -->
+  <path d="M 220 180 
+           V 200 
+           H 290 
+           Q 320 200 335 210 
+           L 340 200 
+           Q 325 180 290 180 
+           Z" 
+        fill="#ffffff" 
+        opacity="0.15"/>
+</svg>
